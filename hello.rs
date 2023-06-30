@@ -1,4 +1,4 @@
-include!("/usr/include/HalonMTA.rs");
+include!("/opt/halon/include/HalonMTA.rs");
 
 #[no_mangle]
 pub extern "C" fn Halon_version(

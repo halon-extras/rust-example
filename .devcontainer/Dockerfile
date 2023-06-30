@@ -20,7 +20,7 @@ ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 RUN apt-get update
 RUN apt-get install -y git rustc rustfmt llvm-dev libclang-dev clang cargo
 RUN cargo install bindgen-cli
-RUN /root/.cargo/bin/bindgen /opt/halon/include/HalonMTA.h -o /usr/include/HalonMTA.rs
+RUN /root/.cargo/bin/bindgen /opt/halon/include/HalonMTA.h -o /opt/halon/include/HalonMTA.rs
 RUN echo -n "UBU2004" > /OSRELEASE.txt
 
 RUN mkdir /var/log/halon && chown halon:halon /var/log/halon
