@@ -1,0 +1,1 @@
+cargo build && hsh --plugin hello hello.hsl

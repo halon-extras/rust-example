@@ -1,0 +1,2 @@
+import { hello } from "extras://hello";
+echo hello();
