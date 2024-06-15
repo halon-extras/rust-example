@@ -12,17 +12,15 @@ RUN apt-get install -y apt-transport-https
 RUN wget -qO - https://raw.githubusercontent.com/halon/changelog/master/pgp-keys/7F0A73B5.asc | apt-key add -
 RUN echo "deb https://repo.halon.io/ focal stable" >> /etc/apt/sources.list.d/halon.list
 RUN echo "machine repo.halon.io login ${HALON_REPO_USER} password ${HALON_REPO_PASS}" >> /etc/apt/auth.conf
-RUN apt-get update && apt-get install -y halon=5.10.0
+RUN apt-get update && apt-get install -y halon=6.0.3
 
 RUN /usr/bin/install -d /var/run/halon
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 
 RUN apt-get update
-RUN apt-get install -y git rustc rustfmt llvm-dev libclang-dev clang cargo
-RUN cargo install bindgen-cli
-RUN /root/.cargo/bin/bindgen /opt/halon/include/HalonMTA.h -o /opt/halon/include/HalonMTA.rs
+RUN apt-get install -y git llvm-dev libclang-dev clang curl
 
-RUN mkdir /var/log/halon && chown halon:halon /var/log/halon
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 RUN apt-get install -y supervisor
 COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf

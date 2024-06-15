@@ -8,3 +8,6 @@ authors = ["Halon <support@halon.io>"]
 name = "hello"
 path = "hello.rs"
 crate-type = ["cdylib"]
+
+[build-dependencies]
+bindgen = "0.69.4"

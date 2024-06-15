@@ -1,4 +1,7 @@
-include!("/opt/halon/include/HalonMTA.rs");
+#![allow(non_upper_case_globals)]
+#![allow(non_camel_case_types)]
+
+include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
 #[no_mangle]
 pub extern "C" fn Halon_version(
