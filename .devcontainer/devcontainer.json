@@ -19,6 +19,6 @@
           "RUSTFLAGS": "-C relro-level=partial"
         }
       }
-    },
+    }
   }
 }
