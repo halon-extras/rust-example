@@ -13,7 +13,12 @@
         "Halon.hsl-linter",
         "Halon.hsl-debug",
         "rust-lang.rust-analyzer"
-      ]
-    }
+      ],
+      "settings": {
+        "rust-analyzer.cargo.extraEnv": {
+          "RUSTFLAGS": "-C relro-level=partial"
+        }
+      }
+    },
   }
 }
