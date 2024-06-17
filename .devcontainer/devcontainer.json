@@ -1,11 +1,11 @@
 {
-	"name": "rust-example",
-	"dockerComposeFile": [
-		"docker-compose.yaml"
-	],
-	"workspaceFolder": "/rust-example",
-	"service": "halon-smtpd",
-	"overrideCommand": false,
+  "name": "rust-example",
+  "dockerComposeFile": [
+    "docker-compose.yaml"
+  ],
+  "workspaceFolder": "/rust-example",
+  "service": "halon-smtpd",
+  "overrideCommand": false,
   "customizations": {
     "vscode": {
       "extensions": [
