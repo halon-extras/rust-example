@@ -12,10 +12,10 @@ environment:
     chmod: "0660"
   privdrop:
     user: halon
-    group: halon
+    group: staff
   umask: "0027"
   rlimit:
     nofile: 70000
 plugins:
-  - id: hello
-    path: /rust-example/target/debug/libhello.so
+  - id: rust-example
+    path: /workspaces/rust-example/build/vscode/target/release/librust_example.so

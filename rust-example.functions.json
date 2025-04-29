@@ -1,0 +1,18 @@
+[
+    {
+        "name": "rust_example",
+        "parameters": {
+            "required": [
+                {
+                    "name": "data",
+                    "type": "string"
+                }
+            ]
+        },
+        "returnType": "string",
+        "detail": "rust_example(string data): string",
+        "value": "rust_example($0)",
+        "documentation": "Return the string input string.",
+        "link": "[Full documentation](https://github.com/halon-extras/rust-example)"
+    }
+]

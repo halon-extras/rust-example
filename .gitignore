@@ -1,1 +1,6 @@
-target
+*.so
+*.h
+/build/dist
+/build/vscode
+/target
+license.key

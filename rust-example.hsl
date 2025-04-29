@@ -1,0 +1,2 @@
+import { rust_example } from "extras://rust-example";
+echo rust_example("Hello");

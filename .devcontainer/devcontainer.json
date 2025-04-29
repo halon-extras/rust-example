@@ -1,24 +1,35 @@
 {
   "name": "rust-example",
-  "dockerComposeFile": [
-    "docker-compose.yaml"
-  ],
-  "workspaceFolder": "/rust-example",
-  "service": "halon-smtpd",
+  "context": "..",
+  "dockerFile": "./Dockerfile",
   "overrideCommand": false,
   "customizations": {
     "vscode": {
       "extensions": [
-        "Halon.vscode-halon",
-        "Halon.hsl-linter",
-        "Halon.hsl-debug",
+        "halon.vscode-halon",
+        "halon.hsl-syntax",
+        "halon.hsl-linter",
+        "halon.hsl-debug",
         "rust-lang.rust-analyzer"
       ],
       "settings": {
         "rust-analyzer.cargo.extraEnv": {
-          "RUSTFLAGS": "-C relro-level=partial"
-        }
+          "RUSTFLAGS": "-C relro-level=partial",
+          "CARGO_TARGET_DIR": "build/vscode/target_dev"
+        },
+        "rust-analyzer.check.extraArgs": [
+          "--target-dir=build/vscode/target_dev"
+        ]
       }
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/.devcontainer/smtpd/dist,target=/etc/halon,type=bind,consistency=cached"
+  ],
+  "build": {
+    "args": {
+      "HALON_REPO_USER": "${localEnv:HALON_REPO_USER}",
+      "HALON_REPO_PASS": "${localEnv:HALON_REPO_PASS}"
     }
   }
 }
