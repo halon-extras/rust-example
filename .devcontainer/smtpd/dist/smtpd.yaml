@@ -18,4 +18,3 @@ environment:
     nofile: 70000
 plugins:
   - id: rust-example
-    path: /workspaces/rust-example/build/vscode/target/release/librust_example.so
